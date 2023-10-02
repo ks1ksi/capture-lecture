@@ -7,14 +7,14 @@ from reportlab.pdfgen import canvas
 current_directory = os.getcwd()
 png_files = [f for f in os.listdir(current_directory) if f.endswith('.png')]
 
-# sort png file by name. 1.png, 2.png, 3.png, ...10.png, 11.png, ...
+# 이름에 포함된 숫자 순서로 정렬합니다. 1.png, 2.png, 3.png, ...10.png, 11.png, ...
 png_files.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))
 
 if not png_files:
     print("현재 디렉토리에 PNG 파일이 없습니다.")
     exit()
 
-# print name of png files
+# PNG 파일 목록을 출력합니다.
 for png_file in png_files:
     print(png_file)
 

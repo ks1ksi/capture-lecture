@@ -1,26 +1,27 @@
-# capture current screen
-
 import os
 
 import keyboard
 import pyautogui
 
+# 스크린샷 파일 이름에 붙일 번호입니다.
 num = 1
+
+# 스크린샷을 저장할 디렉토리 이름입니다.
 dirname = 'computer_network_5_1'
 
-# create a directory for screenshots
+# 스크린샷을 저장할 디렉토리를 생성합니다.
 if not os.path.exists(dirname):
     os.mkdir(dirname)
 
 print('lecture %s' % dirname)
 
-# take screenshot of a specific region. save it to directory with a name
+# 특정 영역의 스크린샷을 찍습니다. 디렉토리에 이름을 붙여 저장합니다.
+# 스크린샷은 tab 키를 누를 때마다 찍습니다.
+# Ctrl + C를 눌러 종료할 수 있습니다.
 while True:
     print('waiting for tab key...')
     keyboard.wait('tab')
     pyautogui.screenshot(
         f'{dirname}/screenshot{num}.png', region=(340, 140, 2030, 1530))
     print(f'screenshot{num}.png saved!')
-    # alert user that screenshot is taken
-
     num += 1
