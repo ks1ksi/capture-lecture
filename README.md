@@ -18,10 +18,14 @@ $ sudo python3 main.py
 
 디렉토리가 생성되고, 그 안에 캡처된 이미지가 저장됩니다.
 
+기본 단축키는 Tab입니다. 종료하려면 Ctrl + C를 누르세요.
+
 ## PDF 변환
 
-변환하고자 하는 PNG 파일이 있는 디렉토리로 이동 후 다음 명령어를 실행합니다.
+전체 디렉토리에 대해, 이미지를 PDF로 변환합니다.
+
+PDF 파일 이름은 디렉토리 이름과 같습니다.
 
 ```bash
-$ sudo python3 ../converter.py
+$ python3 converter.py
 ```
