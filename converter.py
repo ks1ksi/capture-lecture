@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from reportlab.pdfgen import canvas
 
-# 현재 디렉토리와 하위 디렉토리에 있는 PNG 파일을 모두 찾습니다.
+# 현재 디렉토리에 존재하는 PNG 파일을 모두 찾습니다.
 current_directory = os.getcwd()
 png_files = [f for f in os.listdir(current_directory) if f.endswith('.png')]
 
