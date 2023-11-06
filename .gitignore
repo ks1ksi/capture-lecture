@@ -1,2 +1,4 @@
-/.vscode
-/computer_network*
+.vscode/
+.idea/
+computer_network*
+venv/
