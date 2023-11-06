@@ -2,3 +2,4 @@
 .idea/
 computer_network*
 venv/
+.venv/

@@ -8,9 +8,17 @@ MacBook Pro 14인치 1352 * 878 해상도에서 테스트했습니다.
 
 각자 환경에 맞게 수정하시면 됩니다.
 
-> ***시스템 권한이 필요할 수 있습니다.***
+## 설치
+
+```bash
+$ git clone https://github.com/ks1ksi/capture-lecture.git
+$ cd capture-lecture
+$ pip install -r requirements.txt
+```
 
 ## 캡처
+
+> ***시스템 권한이 필요할 수 있습니다.***
 
 ```bash
 $ sudo python3 main.py
