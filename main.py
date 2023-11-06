@@ -2,6 +2,11 @@ import os
 
 import keyboard
 import pyautogui
+import pyscreeze
+
+# TypeError: '<' not supported between instances of 'str' and 'int' 오류를 피하기 위해 버전을 튜플로 변경합니다.
+# 추후 pyscreeze 버전이 올라가면서 이 부분이 수정되면 삭제해도 됩니다.
+pyscreeze.PIL__version__ = (10, 0, 0)
 
 # 스크린샷 파일 이름에 붙일 번호입니다.
 num = 1
