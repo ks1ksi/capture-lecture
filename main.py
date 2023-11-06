@@ -1,8 +1,12 @@
 import os
+import sys
 
 import keyboard
 import pyautogui
 import pyscreeze
+
+# 현재 사용 중인 운영체제를 출력합니다. darwin은 Mac OS를 의미합니다.
+print(f"OS: {sys.platform}")
 
 # For Mac OS
 # TypeError: '<' not supported between instances of 'str' and 'int' 오류를 피하기 위해 버전을 튜플로 변경합니다.
@@ -14,7 +18,7 @@ pyscreeze.PIL__version__ = (0, 0, 0)
 num = 1
 
 # 스크린샷을 저장할 디렉토리 이름입니다.    
-dirname = 'computer_network_5_1'
+dirname = 'computer_network_10_2'
 
 # 스크린샷을 저장할 디렉토리를 생성합니다.
 if not os.path.exists(dirname):
