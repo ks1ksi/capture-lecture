@@ -3,3 +3,4 @@
 computer_network*
 venv/
 .venv/
+.DS_Store
