@@ -16,9 +16,9 @@ $ cd capture-lecture
 $ pip install -r requirements.txt
 ```
 
-## 캡처
-
 > ***시스템 권한이 필요할 수 있습니다.***
+
+## 캡쳐
 
 ```bash
 $ sudo python3 main.py
@@ -30,10 +30,10 @@ $ sudo python3 main.py
 
 ## PDF 변환
 
+```bash
+$ sudo python3 converter.py
+```
+
 전체 디렉토리에 대해, 이미지를 PDF로 변환합니다.
 
 PDF 파일 이름은 디렉토리 이름과 같습니다.
-
-```bash
-$ python3 converter.py
-```
