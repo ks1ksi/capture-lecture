@@ -27,11 +27,18 @@ def create_pdf_from_pngs(directory):
     for png_file in png_files:
         png_path = os.path.join(directory, png_file)
         img = Image.open(png_path)
-        img_width, img_height = img.size
 
+        # Convert PNG to JPG
+        jpg_path = png_path.replace('.png', '.jpg')
+        img.convert('RGB').save(jpg_path, 'JPEG', quality=75)
+
+        img_width, img_height = img.size
         c.setPageSize((img_width, img_height))
-        c.drawInlineImage(png_path, 0, 0, width=img_width, height=img_height)
+        c.drawInlineImage(jpg_path, 0, 0, width=img_width, height=img_height)
         c.showPage()
+
+        # Optionally, delete the JPG file after adding it to the PDF
+        os.remove(jpg_path)
 
     c.save()
     print(f">>{pdf_filename} 파일이 생성되었습니다.<<")
@@ -39,13 +46,12 @@ def create_pdf_from_pngs(directory):
 
 def main(directory):
     with ThreadPoolExecutor() as executor:
-        # 현재 디렉토리의 모든 항목을 가져옵니다.
         for item in os.listdir(directory):
             item_full_path = os.path.join(directory, item)
-
-            # 항목이 디렉토리이고 숨김 폴더가 아니라면 처리합니다.
             if os.path.isdir(item_full_path) and not item.startswith('.'):
+                print(f"디렉토리: {item_full_path}")
                 executor.submit(create_pdf_from_pngs, item_full_path)
+        executor.shutdown(wait=True)
 
 
 if __name__ == '__main__':
