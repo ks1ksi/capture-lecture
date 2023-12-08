@@ -18,7 +18,7 @@ if (sys.platform == 'darwin'):
 num = 1
 
 # 스크린샷을 저장할 디렉토리 이름입니다.
-dirname = 'computer_network_10_2'
+dirname = 'computer_network_14_2'
 
 # 스크린샷을 저장할 디렉토리를 생성합니다.
 if not os.path.exists(dirname):
@@ -34,6 +34,10 @@ while True:
     print('Waiting for tab key...')
     keyboard.wait('tab')
     pyautogui.screenshot(
-        f'{dirname}/screenshot{num}.png', region=(340, 140, 2030, 1530))
+        # 맥북 프로 14인치 3024 x 1964
+        # 디스플레이 기본 설정 1512 x 982
+        # 픽셀 찍은 숫자의 2배로 설정해야 정확한 위치에 스크린샷을 찍습니다.
+        # (190, 85) ~ (1320, 930)
+        f'{dirname}/screenshot{num}.png', region=(380, 170, 2260, 1690))  # x, y, width, height
     print(f'screenshot{num}.png saved!')
     num += 1
